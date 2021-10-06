@@ -9,7 +9,7 @@
             Cuisine : <input name = "cuisine" type="text" required v-model="cuisine">
         </label>
 
-        <button>Ajouter</button>
+        <md-button class="md-raised">Ajouter</md-button>
     </form>
 
     <h1>Nombre de restaurants : {{nbRestaurantsTotal}}</h1>
@@ -28,22 +28,21 @@
             v-on:input="getRestaurantsFromServer()"
         > {{pagesize}}
     </p>
-    <button :disabled = "page===0" @click="pagePrecedente">Précédent</button>
-    <button :disabled = "page===nbPagesTotal" @click="pageSuivante">Suivant</button>
+    <md-button class="md-raised" :disabled = "page===0" @click="pagePrecedente">Précédent</md-button>
+    <md-button class="md-raised" :disabled = "page===nbPagesTotal" @click="pageSuivante">Suivant</md-button>
     <br>
-    <table >
-        <tr >
-            <th >Nom</th>
-            <th>Cuisine </th>
-        </tr>
-        <tbody>
-            <tr v-for="(r,index) in restaurants" :key=index v-on:click="supprimerRestaurant(r._id)" v-bind:style="{backgroundColor:getColor(index)}"
-                v-bind:class="{bordureRouge:(index === 2)}">
-                <td >{{r.name}}</td>
-                <td> {{r.cuisine}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <md-table v-model="restaurants" md-sort="name" md-sort-order="asc">
+        <md-table-row >
+            <md-table-head >Nom</md-table-head>
+            <md-table-head>Cuisine </md-table-head>
+        </md-table-row>
+        
+            <md-table-row slot="md-table-row" slot-scope="{ item}">
+                <md-table-cell md-label="Name" md-sort-by="name">{{item.name}}</md-table-cell>
+                <md-table-cell md-label="cuisine" md-sort-by="cuisine"> {{item.cuisine}}</md-table-cell>
+            </md-table-row>
+        
+    </md-table>
     
   </div>
 </template>
