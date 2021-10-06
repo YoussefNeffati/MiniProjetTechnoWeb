@@ -37,7 +37,7 @@
             <md-table-head>Cuisine </md-table-head>
         </md-table-row>
         
-            <md-table-row slot="md-table-row" slot-scope="{ item}">
+            <md-table-row @click="supprimerRestaurant(item)" slot="md-table-row" slot-scope="{ item}">
                 <md-table-cell md-label="Name" md-sort-by="name">{{item.name}}</md-table-cell>
                 <md-table-cell md-label="cuisine" md-sort-by="cuisine"> {{item.cuisine}}</md-table-cell>
             </md-table-row>
