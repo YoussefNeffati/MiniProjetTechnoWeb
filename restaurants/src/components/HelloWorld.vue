@@ -9,6 +9,15 @@
         </md-table-row>
         
     </md-table>
+ <!--ajout menu-->
+    <md-menu md-direction="bottom-start">
+      <md-button md-menu-trigger>MENU</md-button>
+
+      <md-menu-content>
+        <md-menu-item>A PROPOS</md-menu-item>
+        <md-menu-item>CONTACTS</md-menu-item>
+      </md-menu-content>
+    </md-menu>
     <!---->
     <form @submit.prevent ="ajouterRestaurant(event)">
         <label>
