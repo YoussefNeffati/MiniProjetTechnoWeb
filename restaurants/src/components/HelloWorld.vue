@@ -1,6 +1,15 @@
 <template>
   <div class="hello">
     <!--<button v-on:click="getRestaurantsFromServer()">test recuperation des restaurants</button>-->
+<md-table>
+        <md-table-row >
+            <md-table-cell > <img src="/restaurants/logo1.jpg" /></md-table-cell>
+            <md-table-cell > MINI PROJET TECHNOLOGIE WEB 2021 - 2022</md-table-cell>
+            <md-table-cell><img src="/restaurants/logo2.png" /></md-table-cell>
+        </md-table-row>
+        
+    </md-table>
+    <!---->
     <form @submit.prevent ="ajouterRestaurant(event)">
         <label>
             Nom : <input name = "name" type="text" required v-model="nom">
