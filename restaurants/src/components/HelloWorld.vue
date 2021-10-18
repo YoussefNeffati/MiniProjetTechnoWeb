@@ -21,7 +21,7 @@
     <!--ajout menu-->
     <div class="menu">
     <md-menu md-direction="bottom-left">
-      <md-button md-menu-trigger>
+      <md-button md-menu-trigger >
           <md-icon md-theme="green" class="md-primary">menu</md-icon>
           </md-button>
       
