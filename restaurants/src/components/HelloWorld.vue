@@ -4,9 +4,9 @@
 
 <md-table>
         <md-table-row >
-            <md-table-cell > <img src="/restaurants/logo1.jpg" /></md-table-cell>
+            <md-table-cell > <img src="../restaurants/image/logo1.jpg" height="50%" width="50%"/></md-table-cell>
             <md-table-cell > MINI PROJET TECHNOLOGIE WEB 2021 - 2022</md-table-cell>
-            <md-table-cell><img src="/restaurants/logo2.png" /></md-table-cell>
+            <md-table-cell><img src="../restaurants/image/logo2.png" height="500%" width="500%"/></md-table-cell>
         </md-table-row>
         
     </md-table>
@@ -15,6 +15,7 @@
       <md-button md-menu-trigger>MENU</md-button>
 
       <md-menu-content>
+          
         <md-menu-item>A PROPOS</md-menu-item>
         <md-menu-item>CONTACTS</md-menu-item>
       </md-menu-content>
