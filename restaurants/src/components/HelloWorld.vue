@@ -19,7 +19,8 @@
       </md-table-row>
     </md-table>
     <!--ajout menu-->
-    <md-menu md-direction="bottom-start">
+    <div class="menu">
+    <md-menu md-direction="bottom-left">
       <md-button md-menu-trigger>
           <md-icon md-theme="green" class="md-primary">menu</md-icon>
           </md-button>
@@ -32,6 +33,7 @@
         <md-menu-item>CONTACTS</md-menu-item>
       </md-menu-content>
     </md-menu>
+    </div>
     <!---->
     <form @submit.prevent="ajouterRestaurant(event)">
       <label>
@@ -224,5 +226,8 @@ export default {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
+}
+.menu{
+    float: left;
 }
 </style>
