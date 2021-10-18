@@ -20,8 +20,13 @@
     </md-table>
     <!--ajout menu-->
     <md-menu md-direction="bottom-start">
-      <md-button md-menu-trigger>MENU</md-button>
-
+      <md-button md-menu-trigger>
+          MENU : <md-icon md-theme="green" class="md-primary">menu</md-icon>
+          </md-button>
+      
+      <!---->
+      
+      <!---->
       <md-menu-content>
         <md-menu-item>A PROPOS</md-menu-item>
         <md-menu-item>CONTACTS</md-menu-item>
