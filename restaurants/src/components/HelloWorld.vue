@@ -21,7 +21,7 @@
     <!--ajout menu-->
     <md-menu md-direction="bottom-start">
       <md-button md-menu-trigger>
-          MENU : <md-icon md-theme="green" class="md-primary">menu</md-icon>
+          <md-icon md-theme="green" class="md-primary">menu</md-icon>
           </md-button>
       
       <!---->
