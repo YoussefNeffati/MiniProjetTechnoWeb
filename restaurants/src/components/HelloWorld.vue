@@ -11,7 +11,9 @@
     </md-table>
     <md-table>
         <md-table-row>
-            <md-table-cell > MINI PROJET TECHNOLOGIE WEB 2021 - 2022</md-table-cell>
+            <md-table-cell > 
+                <h1> PROJET TECHNOLOGIE WEB 2021 - 2022 </h1>
+                </md-table-cell>
         </md-table-row>
     </md-table>
  <!--ajout menu-->
