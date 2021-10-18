@@ -4,11 +4,15 @@
 
 <md-table>
         <md-table-row >
-            <md-table-cell > <img src="../restaurants/image/logo1.jpg" height="50%" width="50%"/></md-table-cell>
-            <md-table-cell > MINI PROJET TECHNOLOGIE WEB 2021 - 2022</md-table-cell>
-            <md-table-cell><img src="../restaurants/image/logo2.png" height="500%" width="500%"/></md-table-cell>
+            <md-table-cell > <img src="../restaurants/image/miage.jpg" /></md-table-cell>
+            
+            <!--<md-table-cell><img src="../restaurants/image/logo2.png" height="500%" width="500%"/></md-table-cell>-->
         </md-table-row>
-        
+    </md-table>
+    <md-table>
+        <md-table-row>
+            <md-table-cell > MINI PROJET TECHNOLOGIE WEB 2021 - 2022</md-table-cell>
+        </md-table-row>
     </md-table>
  <!--ajout menu-->
     <md-menu md-direction="bottom-start">
