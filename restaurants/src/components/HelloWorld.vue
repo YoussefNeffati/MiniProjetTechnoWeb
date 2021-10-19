@@ -43,8 +43,8 @@
         Cuisine :
         <input name="cuisine" type="text" required v-model="cuisine" />
       </label>
+      <md-button >Ajouter</md-button>
 
-      <md-button class="md-raised">Ajouter</md-button>
     </form>
 
     <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
@@ -102,12 +102,13 @@
         md-sort-order="asc"
         md-card
         md-fixed-header
+        class="tab"
       >
         <md-table-toolbar>
           <h1 class="md-title">Liste restaurants</h1>
         </md-table-toolbar>
 
-        <md-table-row slot="md-table-row" slot-scope="{ item }">
+        <md-table-row @click="supprimerRestaurant(item)" slot="md-table-row" slot-scope="{ item }">
           <md-table-cell md-label="Name" md-sort-by="name">{{
             item.name
           }}</md-table-cell>
@@ -229,5 +230,11 @@ export default {
 }
 .menu{
     float: left;
+}
+.tab{
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>
