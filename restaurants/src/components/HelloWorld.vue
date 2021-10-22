@@ -20,21 +20,20 @@
     </md-table>
     <!--ajout menu-->
     <div class="menu">
-    <md-menu md-direction="bottom-left">
-      <md-button md-menu-trigger >
-          <md-icon md-theme="green" class="md-primary">menu</md-icon>
-          </md-button>
+    <md-menu md-direction="bottom-start">
+      <md-button md-menu-trigger > 
+          <md-icon md-theme="green" class="md-primary"> menu </md-icon>
+      </md-button>
       
-      <!---->
-      
-      <!---->
+     
       <md-menu-content>
         <md-menu-item>A PROPOS</md-menu-item>
         <md-menu-item>CONTACTS</md-menu-item>
       </md-menu-content>
     </md-menu>
-    </div>
-    <!---->
+    
+    </div> 
+   
     <form @submit.prevent="ajouterRestaurant(event)">
       <label>
         Nom : <input name="name" type="text" required v-model="nom" />
@@ -43,8 +42,8 @@
         Cuisine :
         <input name="cuisine" type="text" required v-model="cuisine" />
       </label>
-      <md-button >Ajouter</md-button>
 
+      <md-button >Ajouter</md-button>
     </form>
 
     <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
@@ -82,7 +81,7 @@
       >Suivant</md-button
     >
     <br />
-    <md-table>
+    
       <!-- <md-table-row >
             <md-table-head >Nom</md-table-head>
             <md-table-head>Cuisine </md-table-head>
@@ -94,7 +93,10 @@
                 <md-table-cell >{{r.name}}</md-table-cell>
                 <md-table-cell> {{r.cuisine}}</md-table-cell>
                 <md-table-cell> {{r.borough}}</md-table-cell>
-            </md-table-row> -->
+            </md-table-row>
+            
+            @click="supprimerRestaurant(item._id)"
+             -->
 
       <md-table
         v-model="restaurants"
@@ -103,19 +105,19 @@
         md-card
         md-fixed-header
         class="tab"
-      >
+        >
         <md-table-toolbar>
           <h1 class="md-title">Liste restaurants</h1>
         </md-table-toolbar>
 
-        <md-table-row @click="supprimerRestaurant(item)" slot="md-table-row" slot-scope="{ item }">
-          <md-table-cell md-label="Name" md-sort-by="name">{{
-            item.name
-          }}</md-table-cell>
-          <md-table-cell md-label="Cuisine" md-sort-by="cuisine">{{
-            item.cuisine
-          }}</md-table-cell>
+        <md-table-row  slot="md-table-row" slot-scope="{ item }">
+          <md-table-cell md-label="Name" md-sort-by="name"> {{ item.name }} </md-table-cell>
+          <md-table-cell md-label="Cuisine" md-sort-by="cuisine">{{ item.cuisine }}</md-table-cell>
           <md-table-cell md-label="Ville">{{ item.borough }}</md-table-cell>
+          <md-table-cell md-label=""> 
+              <router-link :to="'/DetailRestaurants/'+ item._id">[Detail d'un Restaurant]
+              </router-link> 
+            </md-table-cell>
         </md-table-row>
 
         <md-table-empty-state
@@ -124,7 +126,7 @@
         >
         </md-table-empty-state>
       </md-table>
-    </md-table>
+    
   </div>
 </template>
 
@@ -231,10 +233,13 @@ export default {
 .menu{
     float: left;
 }
+
 .tab{
     width: 50%;
     height: 50%;
     margin-left: auto;
     margin-right: auto;
 }
+
+
 </style>
