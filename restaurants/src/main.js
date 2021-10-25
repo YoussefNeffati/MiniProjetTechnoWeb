@@ -20,11 +20,12 @@ const router = new VueRouter({
     component: HelloWorld
   },
   {
-  path: '/DetailRestaurants',
+  path: '/restaurant/:id',
   component: Restaurant
 }
-  ]
-}) 
+  ],
+  mode:'history'
+}) ;
 
 new Vue({
   router,

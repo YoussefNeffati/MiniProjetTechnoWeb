@@ -114,9 +114,10 @@
           <md-table-cell md-label="Name" md-sort-by="name"> {{ item.name }} </md-table-cell>
           <md-table-cell md-label="Cuisine" md-sort-by="cuisine">{{ item.cuisine }}</md-table-cell>
           <md-table-cell md-label="Ville">{{ item.borough }}</md-table-cell>
-          <md-table-cell md-label=""> 
-              <router-link :to="'/DetailRestaurants/'+ item._id">[Detail d'un Restaurant]
-              </router-link> 
+          <md-table-cell md-label="Action"> 
+            <!--<md-button>Details</md-button>-->
+              <router-link :to="'/restaurant/' + item._id">[Detail d'un Restaurant]
+              </router-link>
             </md-table-cell>
         </md-table-row>
 
