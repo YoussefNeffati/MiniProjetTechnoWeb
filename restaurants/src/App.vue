@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-link to="/">[Home]</router-link>
-    <router-link to="/restaurant">[Detail d'un Restaurants]</router-link>
     <router-view> </router-view>
     <HelloWorld />
     

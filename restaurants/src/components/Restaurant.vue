@@ -2,13 +2,13 @@
     <div>
       <!--<h1>Détail d'un restaurant </h1>-->
         <h1>Détail du restaurant qui a pour id : {{id}} </h1>
-        <!--<p>Cuisine : {{restaurant.cuisine}}</p>-->
-        <!--
+        
+        
         <ul>
             <li>Nom : {{restaurant.name}}</li>
             <li>Cuisine : {{restaurant.cuisine}}</li>
             
-        </ul>-->
+        </ul>
             
     </div>
 </template>
@@ -33,7 +33,7 @@ export default {
   mounted(){
     console.log("Avant affichage, on pourra faire un fetch...");
     console.log("ID = " + this.id)
-    let url = "http://localhost:8080/restaurants" + this.id;
+    let url = "http://localhost:8080/api/restaurants/" + this.id;
     fetch(url)
     .then(reponse =>{
       return reponse.json();
