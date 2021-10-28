@@ -8,7 +8,8 @@ import VueRouter from 'vue-router'
 
 import HelloWorld from './components/HelloWorld.vue'
 import Restaurant from './components/Restaurant.vue'
-//import Menu from './components/Menu.vue'
+import Propos from './components/Propos.vue'
+
 //import { component } from 'vue/types/umd'
 
 Vue.config.productionTip = false
@@ -24,6 +25,10 @@ const router = new VueRouter({
   {
   path: '/restaurant/:id',
   component: Restaurant
+},
+{
+  path:'/propos/',
+  component: Propos
 }
   ],
   mode:'history'
