@@ -2,22 +2,16 @@
     <div>
       <!--<h1>Détail d'un restaurant </h1>-->
         <h1>Détail du restaurant qui a pour id : {{id}} </h1>
-        
-        
         <ul>
             <li>Nom : {{restaurant.name}}</li>
-            <li>Cuisine : {{restaurant.cuisine}}</li>
-            
-        </ul>
-            
+            <li>Cuisine : {{restaurant.cuisine}}</li>   
+        </ul>    
     </div>
 </template>
-
 <script>
 export default {
   name: 'Restaurant',
   props: {
-
   },
   computed:{
     id(){
@@ -27,7 +21,6 @@ export default {
   data: function(){
     return {
           restaurant:null
-
     }
   },
   mounted(){
@@ -43,12 +36,8 @@ export default {
     })
   },
   methods: {
-
   }
-  
   }
-
 </script>
-
 <style scoped>
 </style>

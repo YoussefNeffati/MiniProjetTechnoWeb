@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <router-link to="/">[Home]</router-link>
+        <img :src="image"/>
+        <h1>PROJET TECHNOLOGIE WEB 2021 - 2022</h1>
+    <router-link to="/">
+    <md-button class="md-raised md-accent">ACCUEIL</md-button>
+    </router-link>
     <router-view> </router-view>
     <HelloWorld />
     
@@ -9,11 +13,16 @@
 </template>
 
 <script>
-
+import image from "./assets/miage.jpg"
 
 export default {
   name: 'App',
   components: {
+  },
+  data: function(){
+    return {
+      image: image
+    }
   }
 }
 </script>

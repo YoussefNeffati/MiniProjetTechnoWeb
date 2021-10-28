@@ -8,6 +8,8 @@ import VueRouter from 'vue-router'
 
 import HelloWorld from './components/HelloWorld.vue'
 import Restaurant from './components/Restaurant.vue'
+//import Menu from './components/Menu.vue'
+//import { component } from 'vue/types/umd'
 
 Vue.config.productionTip = false
 Vue.use(VueMaterial)

@@ -1,39 +1,17 @@
 <template>
   <div class="hello">
-    <!--<button v-on:click="getRestaurantsFromServer()">test recuperation des restaurants</button>-->
-
-    <md-table>
-      <md-table-row>
-        <md-table-cell>
-          <img src="../restaurants/image/miage.jpg"
-        /></md-table-cell>
-
-        <!--<md-table-cell><img src="../restaurants/image/logo2.png" height="500%" width="500%"/></md-table-cell>-->
-      </md-table-row>
-    </md-table>
-    <md-table>
-      <md-table-row>
-        <md-table-cell>
-          <h1>PROJET TECHNOLOGIE WEB 2021 - 2022</h1>
-        </md-table-cell>
-      </md-table-row>
-    </md-table>
     <!--ajout menu-->
     <div class="menu">
-    <md-menu md-direction="bottom-start">
-      <md-button md-menu-trigger > 
-          <md-icon md-theme="green" class="md-primary"> menu </md-icon>
-      </md-button>
-      
-     
-      <md-menu-content>
-        <md-menu-item>A PROPOS</md-menu-item>
-        <md-menu-item>CONTACTS</md-menu-item>
-      </md-menu-content>
-    </md-menu>
-    
-    </div> 
-   
+      <md-menu md-direction="bottom-start">
+        <md-button md-menu-trigger>
+          <md-icon  md-theme="green" class="md-primary"> menu </md-icon>
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>A PROPOS</md-menu-item>
+          <md-menu-item>CONTACTS</md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
     <form @submit.prevent="ajouterRestaurant(event)">
       <label>
         Nom : <input name="name" type="text" required v-model="nom" />
@@ -42,10 +20,8 @@
         Cuisine :
         <input name="cuisine" type="text" required v-model="cuisine" />
       </label>
-
-      <md-button >Ajouter</md-button>
+      <md-button>Ajouter</md-button>
     </form>
-
     <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
     <h2>
       <label
@@ -73,7 +49,6 @@
       />
       {{ pagesize }}
     </p>
-
     <md-button :disabled="page === 0" @click="pagePrecedente"
       >Précédent</md-button
     >
@@ -81,8 +56,7 @@
       >Suivant</md-button
     >
     <br />
-    
-      <!-- <md-table-row >
+    <!-- <md-table-row >
             <md-table-head >Nom</md-table-head>
             <md-table-head>Cuisine </md-table-head>
             <md-table-head>Ville </md-table-head>
@@ -98,36 +72,40 @@
             @click="supprimerRestaurant(item._id)"
              -->
 
-      <md-table
-        v-model="restaurants"
-        md-sort="name"
-        md-sort-order="asc"
-        md-card
-        md-fixed-header
-        class="tab"
-        >
-        <md-table-toolbar>
-          <h1 class="md-title">Liste restaurants</h1>
-        </md-table-toolbar>
+    <md-table
+      v-model="restaurants"
+      md-sort="name"
+      md-sort-order="asc"
+      md-card
+      md-fixed-header
+      class="tab"
+    >
+      <md-table-toolbar>
+        <h1 class="md-title">Liste restaurants</h1>
+      </md-table-toolbar>
 
-        <md-table-row  slot="md-table-row" slot-scope="{ item }">
-          <md-table-cell md-label="Name" md-sort-by="name"> {{ item.name }} </md-table-cell>
-          <md-table-cell md-label="Cuisine" md-sort-by="cuisine">{{ item.cuisine }}</md-table-cell>
-          <md-table-cell md-label="Ville">{{ item.borough }}</md-table-cell>
-          <md-table-cell md-label="Action"> 
-            <!--<md-button>Details</md-button>-->
-              <router-link :to="'/restaurant/' + item._id">[Detail d'un Restaurant]
-              </router-link>
-            </md-table-cell>
-        </md-table-row>
+      <md-table-row slot="md-table-row" slot-scope="{ item }">
+        <md-table-cell md-label="Name" md-sort-by="name">
+          {{ item.name }}
+        </md-table-cell>
+        <md-table-cell md-label="Cuisine" md-sort-by="cuisine">{{
+          item.cuisine
+        }}</md-table-cell>
+        <md-table-cell md-label="Ville">{{ item.borough }}</md-table-cell>
+        <md-table-cell md-label="Action">
+          <!--<md-button>Details</md-button>-->
+          <router-link :to="'/restaurant/' + item._id"
+            ><md-button class="md-raised md-primary">Details</md-button>
+          </router-link>
+        </md-table-cell>
+      </md-table-row>
 
-        <md-table-empty-state
-          md-label="aucun restaurant trouvé"
-          :md-description="`aucun restaurant ne correspond à votre recherche pour '${nomRecherche}'. Essayez un autre nom de recherche ou ajoutez un nouveau nom restaurant.`"
-        >
-        </md-table-empty-state>
-      </md-table>
-    
+      <md-table-empty-state
+        md-label="aucun restaurant trouvé"
+        :md-description="`aucun restaurant ne correspond à votre recherche pour '${nomRecherche}'. Essayez un autre nom de recherche ou ajoutez un nouveau nom restaurant.`"
+      >
+      </md-table-empty-state>
+    </md-table>
   </div>
 </template>
 
@@ -231,16 +209,14 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-.menu{
-    float: left;
+.menu {
+  float: left;
 }
 
-.tab{
-    width: 50%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
+.tab {
+  width: 50%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-
 </style>
