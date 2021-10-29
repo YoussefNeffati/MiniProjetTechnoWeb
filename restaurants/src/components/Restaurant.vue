@@ -1,18 +1,23 @@
 <template>
-    <div>
+    <div id="Restaurant">
+      <!--<img :src="resto"/> -->
       <!--<h1>Détail d'un restaurant </h1>-->
         <h1>Détail du restaurant qui a pour id : {{id}} </h1>
         <ul>
             <li>Nom : {{restaurant.name}}</li>
-            <li>Cuisine : {{restaurant.cuisine}}</li>   
-        </ul>    
+            <li>Cuisine : {{restaurant.cuisine}}</li> 
+            <li> Image: <img src="../components/image/r1.png"/></li>  
+        </ul> 
+           
     </div>
 </template>
 <script>
+//import resto from "./assets/r1.png"
 export default {
   name: 'Restaurant',
   props: {
   },
+  
   computed:{
     id(){
       return this.$route.params.id
@@ -20,7 +25,8 @@ export default {
   },
   data: function(){
     return {
-          restaurant:null
+          restaurant:null,
+          //resto: resto
     }
   },
   mounted(){
