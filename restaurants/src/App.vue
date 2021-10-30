@@ -2,11 +2,8 @@
   <div id="app">
         <img :src="image"/>
         <h1>PROJET TECHNOLOGIE WEB 2021 - 2022</h1>
-    <router-link to="/">
-    <md-button class="md-raised md-accent">ACCUEIL</md-button>
-    </router-link>
+   
     <router-view> </router-view>
-    <HelloWorld />
     
   </div>
   
@@ -14,6 +11,7 @@
 
 <script>
 import image from "./assets/miage.jpg"
+
 
 export default {
   name: 'App',
@@ -34,6 +32,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-bottom: 100px;
+}
+.menu > ul {
+  text-align: right;
+  margin-right: 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  letter-spacing: 1px;
+  list-style-type: none;
+  
 }
 </style>

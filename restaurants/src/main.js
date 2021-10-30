@@ -4,7 +4,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import VueRouter from 'vue-router'
-
+import * as VueGoogleMaps from "vue2-google-maps" // Import package
 
 import HelloWorld from './components/HelloWorld.vue'
 import Restaurant from './components/Restaurant.vue'
@@ -15,6 +15,12 @@ import Propos from './components/Propos.vue'
 Vue.config.productionTip = false
 Vue.use(VueMaterial)
 Vue.use(VueRouter);
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyDjvAJfkju0KjI3cWJ2iwfNYiS-wQxEEtU",
+    libraries: "places"
+  }
+});
 
 const router = new VueRouter({
 

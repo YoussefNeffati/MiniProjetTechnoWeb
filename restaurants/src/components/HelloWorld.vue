@@ -10,6 +10,9 @@
           <router-link to="/propos/">
           <md-menu-item>A PROPOS</md-menu-item>
           </router-link>
+          <router-link to="/">
+          <md-menu-item>ACCUEIL</md-menu-item>
+          </router-link>
           <md-menu-item>CONTACTS</md-menu-item>
         </md-menu-content>
       </md-menu>
