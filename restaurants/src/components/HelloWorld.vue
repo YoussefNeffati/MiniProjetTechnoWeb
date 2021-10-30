@@ -17,15 +17,15 @@
         </md-menu-content>
       </md-menu>
     </div>
-    <form @submit.prevent="ajouterRestaurant(event)">
-      <label>
-        Nom : <input name="name" type="text" required v-model="nom" />
-      </label>
-      <label>
-        Cuisine :
-        <input name="cuisine" type="text" required v-model="cuisine" />
-      </label>
-      <md-button>Ajouter</md-button>
+    <form @submit.prevent ="ajouterRestaurant(event)">
+        <label>
+            Nom : <input name = "name" type="text" required v-model="nom">
+        </label>
+        <label>
+            Cuisine : <input name = "cuisine" type="text" required v-model="cuisine">
+        </label>
+
+        <button>Ajouter</button>
     </form>
     <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
     <h2>
@@ -102,6 +102,7 @@
           <router-link :to="'/restaurant/' + item._id"
             ><md-button class="md-raised md-primary">Details</md-button>
           </router-link>
+          <md-button v-on:click="supprimerRestaurant(item._id)"  class="md-raised md-accent" >Supprimer</md-button>
         </md-table-cell>
       </md-table-row>
 
