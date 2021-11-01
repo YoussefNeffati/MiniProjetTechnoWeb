@@ -9,6 +9,7 @@ import * as VueGoogleMaps from "vue2-google-maps" // Import package
 import HelloWorld from './components/HelloWorld.vue'
 import Restaurant from './components/Restaurant.vue'
 import Propos from './components/Propos.vue'
+import Contact from './components/Contact.vue'
 
 //import { component } from 'vue/types/umd'
 
@@ -29,16 +30,20 @@ const router = new VueRouter({
     component: HelloWorld
   },
   {
-  path: '/restaurant/:id',
-  component: Restaurant
-},
-{
-  path:'/propos/',
-  component: Propos
-}
+    path: '/restaurant/:id',
+    component: Restaurant
+  },
+  {
+    path: '/propos/',
+    component: Propos
+  },
+  {
+    path: '/contact',
+    component: Contact
+  }
   ],
-  mode:'history'
-}) ;
+  mode: 'history'
+});
 
 new Vue({
   router,

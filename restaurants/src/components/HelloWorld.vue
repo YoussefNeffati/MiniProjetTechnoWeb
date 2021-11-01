@@ -4,31 +4,34 @@
     <div class="menu">
       <md-menu md-direction="bottom-start">
         <md-button md-menu-trigger>
-          <md-icon  md-theme="green" class="md-primary"> menu </md-icon>
+          <md-icon md-theme="green" class="md-primary"> menu </md-icon>
         </md-button>
         <md-menu-content>
-          <router-link to="/propos/">
-          <md-menu-item>A PROPOS</md-menu-item>
-          </router-link>
           <router-link to="/">
-          <md-menu-item>ACCUEIL</md-menu-item>
+            <md-menu-item>ACCUEIL</md-menu-item>
           </router-link>
-          <md-menu-item>CONTACTS</md-menu-item>
+          <router-link to="/propos/">
+            <md-menu-item>A PROPOS</md-menu-item>
+          </router-link>
+          <router-link to="/contact/">
+            <md-menu-item>CONTACTS</md-menu-item>
+          </router-link>
         </md-menu-content>
       </md-menu>
     </div>
     <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
-    <form @submit.prevent ="ajouterRestaurant(event)">
-        <label>
-            Nom : <input name = "name" type="text" required v-model="nom">
-        </label>
-        <label>
-            Cuisine : <input name = "cuisine" type="text" required v-model="cuisine">
-        </label>
+    <form @submit.prevent="ajouterRestaurant(event)">
+      <label>
+        Nom : <input name="name" type="text" required v-model="nom" />
+      </label>
+      <label>
+        Cuisine :
+        <input name="cuisine" type="text" required v-model="cuisine" />
+      </label>
 
-        <button>Ajouter</button>
+      <button>Ajouter</button>
     </form>
-    
+
     <h2>
       <label
         >Recherche par nom:
@@ -88,7 +91,11 @@
           <router-link :to="'/restaurant/' + item._id"
             ><md-button class="md-raised md-primary">Details</md-button>
           </router-link>
-          <md-button v-on:click="supprimerRestaurant(item._id)"  class="md-raised md-accent" >Supprimer</md-button>
+          <md-button
+            v-on:click="supprimerRestaurant(item._id)"
+            class="md-raised md-accent"
+            >Supprimer</md-button
+          >
         </md-table-cell>
       </md-table-row>
 
@@ -164,7 +171,6 @@ export default {
       }
     },
     async ajouterRestaurant() {
-
       let donneesFormulaire = new FormData();
       donneesFormulaire.append("nom", this.nom);
       donneesFormulaire.append("cuisine", this.cuisine);

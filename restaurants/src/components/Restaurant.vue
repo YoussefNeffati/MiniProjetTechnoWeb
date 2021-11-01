@@ -6,16 +6,17 @@
           <md-icon md-theme="green" class="md-primary"> menu </md-icon>
         </md-button>
         <md-menu-content>
-          <router-link to="/propos/">
-            <md-menu-item>A PROPOS</md-menu-item>
-          </router-link>
           <router-link to="/">
             <md-menu-item>ACCUEIL</md-menu-item>
           </router-link>
-          <md-menu-item>CONTACTS</md-menu-item>
+          <router-link to="/propos/">
+            <md-menu-item>A PROPOS</md-menu-item>
+          </router-link>
+          <router-link to="/contact/">
+            <md-menu-item>CONTACTS</md-menu-item>
+          </router-link>
         </md-menu-content>
       </md-menu>
-
     </div>
 
     <div class="wrapper">
@@ -41,10 +42,13 @@
         </h4>
 
         <gmap-map
-          :center="{ lat: restaurant.address.coord[0], lng: restaurant.address.coord[1] }"
+          :center="{
+            lat: restaurant.address.coord[0],
+            lng: restaurant.address.coord[1],
+          }"
           :zoom="2"
           map-type-id="terrain"
-          style="width: 450px; height: 240px; margin: 15px 0px 0px 38px;"
+          style="width: 450px; height: 240px; margin: 15px 0px 0px 38px"
         >
           <gmap-marker
             :position="{
@@ -149,5 +153,4 @@ h4 {
   width: 327px;
   position: relative;
 }
-
 </style>

@@ -21,10 +21,17 @@
     </div>
     <div>
       <h1>Mini projet M1 Miage 2021-2022 TECHNOLOGIES Web</h1>
-      <br>
+      <p>Pour toutes questions, veuillez nous contacter:</p>
       <p>
-        Dans ce mini projet, il est question d'appliquer les notions vues en
-        cours
+        NOM: CAMARA<br />
+        PRENOM: Mamadou<br />
+        EMAIL: mamadou.camara1@etu.univ-cotedazur.fr
+      </p>
+
+      <p>
+        NOM: NEFFATI<br />
+        PRENOM: Youssef<br />
+        EMAIL: youssef.neffati@etu.univ-cotedazur.from
       </p>
     </div>
   </div>
