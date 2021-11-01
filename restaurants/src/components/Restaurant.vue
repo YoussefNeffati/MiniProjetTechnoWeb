@@ -41,15 +41,15 @@
         </h4>
 
         <gmap-map
-          :center="{ lat: lat, lng: lng }"
+          :center="{ lat: restaurant.address.coord[0], lng: restaurant.address.coord[1] }"
           :zoom="2"
           map-type-id="terrain"
           style="width: 450px; height: 240px; margin: 15px 0px 0px 38px;"
         >
           <gmap-marker
             :position="{
-              lat: lat,
-              lng: lng,
+              lat: restaurant.address.coord[0],
+              lng: restaurant.address.coord[1],
             }"
           >
           </gmap-marker>
@@ -71,11 +71,7 @@ export default {
   },
   data: function () {
     return {
-      restaurant: null,
-      center: {
-        lat: 0,
-        lng: 0,
-      },
+      restaurant: "",
     };
   },
   mounted() {
@@ -89,8 +85,6 @@ export default {
       .then((data) => {
         console.log(data.restaurant.name);
         this.restaurant = data.restaurant;
-        this.lat = data.restaurant.address.coord[0];
-        this.lng = data.restaurant.address.coord[1];
       });
   },
   methods: {},
@@ -99,6 +93,8 @@ export default {
 <style scoped>
 .menu {
   float: left;
+  position: fixed;
+  top: 10px;
 }
 .wrapper {
   height: 430px;
@@ -109,6 +105,7 @@ export default {
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 /* Columns */
@@ -123,6 +120,7 @@ export default {
   width: 570px;
   border-radius: 0 7px 10px 7px;
   background-color: #ffffff;
+  position: relative;
 }
 
 .right-column h1 {
@@ -149,6 +147,7 @@ h4 {
   float: left;
   height: 430px;
   width: 327px;
+  position: relative;
 }
 
 </style>

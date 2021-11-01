@@ -17,6 +17,7 @@
         </md-menu-content>
       </md-menu>
     </div>
+    <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
     <form @submit.prevent ="ajouterRestaurant(event)">
         <label>
             Nom : <input name = "name" type="text" required v-model="nom">
@@ -27,7 +28,7 @@
 
         <button>Ajouter</button>
     </form>
-    <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
+    
     <h2>
       <label
         >Recherche par nom:
@@ -61,21 +62,6 @@
       >Suivant</md-button
     >
     <br />
-    <!-- <md-table-row >
-            <md-table-head >Nom</md-table-head>
-            <md-table-head>Cuisine </md-table-head>
-            <md-table-head>Ville </md-table-head>
-        </md-table-row>
-        
-             <md-table-row v-for="(r,index) in restaurants" :key=index v-on:click="supprimerRestaurant(r._id)" v-bind:style="{backgroundColor:getColor(index)}"
-                v-bind:class="{bordureRouge:(index === 2)}">
-                <md-table-cell >{{r.name}}</md-table-cell>
-                <md-table-cell> {{r.cuisine}}</md-table-cell>
-                <md-table-cell> {{r.borough}}</md-table-cell>
-            </md-table-row>
-            
-            @click="supprimerRestaurant(item._id)"
-             -->
 
     <md-table
       v-model="restaurants"
@@ -178,15 +164,6 @@ export default {
       }
     },
     async ajouterRestaurant() {
-      // eviter le comportement par defaut
-      //event.preventDefault();
-
-      /* this.restaurants.push(
-                     {
-                         name: this.nom,
-                         cuisine: this.cuisine
-                     }
-                 );*/
 
       let donneesFormulaire = new FormData();
       donneesFormulaire.append("nom", this.nom);
@@ -217,6 +194,8 @@ export default {
 }
 .menu {
   float: left;
+  position: fixed;
+  top: 10px;
 }
 
 .tab {

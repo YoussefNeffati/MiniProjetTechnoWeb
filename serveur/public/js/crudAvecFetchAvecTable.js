@@ -1,13 +1,13 @@
 // REQUETES GET
 function getRequest1() {
-	let url = "http://localhost:8080/api/restaurants";
+	let url = "/api/restaurants";
 
 	fetch(url)
-		.then((responseJSON) => {
-        	responseJSON.json().then((resJS) => {
+		.then(function(responseJSON) {
+        	responseJSON.json()
+        	.then(function(res) {
         		// Maintenant res est un vrai objet JavaScript
-                console.log(resJS)
-        		//afficheReponseGET(resJS);
+        		afficheReponseGET(res);
         	});
     	})
     	.catch(function (err) {

@@ -36,5 +36,7 @@ export default {
 <style scoped>
 .menu {
   float: left;
+  position: fixed;
+  top: 10px;
 }
 </style>
