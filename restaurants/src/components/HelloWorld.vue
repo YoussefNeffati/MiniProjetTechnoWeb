@@ -20,15 +20,18 @@
       </md-menu>
     </div>
     <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
-    <form @submit.prevent="ajouterRestaurant(event)">
+    <form @submit.prevent="ajouterRestaurant()">
       <label>
-        Nom : <input name="name" type="text" required v-model="nom" />
+        Nom : <input name="name" type="text" required v-model="name" />
       </label>
       <label>
         Cuisine :
         <input name="cuisine" type="text" required v-model="cuisine" />
       </label>
-
+      <label>
+        Ville :
+        <input name="borough" type="text" required v-model="borough" />
+      </label>
       <button>Ajouter</button>
     </form>
 
@@ -113,8 +116,9 @@ export default {
   name: "HelloWorld",
   data: () => ({
     restaurants: [],
-    nom: "",
+    name: "",
     cuisine: "",
+    borough: "",
     nbRestaurantsTotal: 0,
     page: 0,
     pagesize: 10,
@@ -172,16 +176,17 @@ export default {
     },
     async ajouterRestaurant() {
       let donneesFormulaire = new FormData();
-      donneesFormulaire.append("nom", this.nom);
+      donneesFormulaire.append("name", this.name);
       donneesFormulaire.append("cuisine", this.cuisine);
+      donneesFormulaire.append("borough", this.borough);
 
       await fetch(this.lien, {
         method: "POST",
         body: donneesFormulaire,
       });
-      this.nom = "";
+      this.name = "";
       this.cuisine = "";
-
+      this.borough = "";
       this.getRestaurantsFromServer();
     },
     getColor(index) {

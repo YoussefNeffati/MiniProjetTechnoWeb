@@ -133,8 +133,9 @@ exports.createRestaurant = async (formData) => {
 
 	try {
 		let toInsert = {
-			name: formData.nom,
-			cuisine: formData.cuisine
+			name: formData.name,
+			cuisine: formData.cuisine,
+			borough: formData.borough
 		};
 		let data = await db.collection("restaurants").insertOne(toInsert);
 		reponse = {
@@ -164,7 +165,8 @@ exports.updateRestaurant = async (id, formData) => {
 		let newvalues = {
 			$set: {
 				name: formData.name,
-				cuisine: formData.cuisine
+				cuisine: formData.cuisine,
+				borough: formData.borough
 			}
 		};
 		let result = await db.collection("restaurants").updateOne(myquery, newvalues);
