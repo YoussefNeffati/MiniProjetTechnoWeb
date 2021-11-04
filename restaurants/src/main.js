@@ -5,6 +5,8 @@ import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import VueRouter from 'vue-router'
 import * as VueGoogleMaps from "vue2-google-maps" // Import package
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
 
 import HelloWorld from './components/HelloWorld.vue'
 import Restaurant from './components/Restaurant.vue'
@@ -16,6 +18,9 @@ import Contact from './components/Contact.vue'
 Vue.config.productionTip = false
 Vue.use(VueMaterial)
 Vue.use(VueRouter);
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyDjvAJfkju0KjI3cWJ2iwfNYiS-wQxEEtU",

@@ -21,9 +21,31 @@
 
     <div class="wrapper">
       <!-- Left Column / Headphones Image -->
-      <div class="left-column">
-        <img src="../components/image/Restaurants.jpg" />
-      </div>
+
+      <b-carousel
+        id="carousel-1"
+        v-model="slide"
+        :interval="2000"
+        controls
+        indicators
+        background="#ccc"
+        style="
+          border-radius: 7px 0 0 7px;
+          float: left;
+          height: 420px;
+          width: 327px;
+        "
+       
+      >
+        <b-carousel-slide img-src="https://images.unsplash.com/photo-1583426189374-8090f9dd26cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=731&q=80">
+        </b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://images.unsplash.com/photo-1613946069412-38f7f1ff0b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=735&q=80"
+        ></b-carousel-slide>
+        <b-carousel-slide
+          img-src="https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=735&q=80"
+        ></b-carousel-slide>
+      </b-carousel>
 
       <div class="right-column">
         <!--<h1>Détail d'un restaurant </h1>-->
@@ -43,17 +65,17 @@
 
         <gmap-map
           :center="{
-            lat: restaurant.address.coord[0],
-            lng: restaurant.address.coord[1],
+            lat: restaurant.address.coord[1],
+            lng: restaurant.address.coord[0],
           }"
-          :zoom="2"
+          :zoom="10"
           map-type-id="terrain"
-          style="width: 450px; height: 240px; margin: 15px 0px 0px 38px"
+          style="width: 450px; height: 260px; margin: 25px 0px 0px 38px"
         >
           <gmap-marker
             :position="{
-              lat: restaurant.address.coord[0],
-              lng: restaurant.address.coord[1],
+              lat: restaurant.address.coord[1],
+              lng: restaurant.address.coord[0],
             }"
           >
           </gmap-marker>
@@ -76,6 +98,8 @@ export default {
   data: function () {
     return {
       restaurant: "",
+      slide: 0,
+      sliding: null,
     };
   },
   mounted() {
@@ -91,7 +115,14 @@ export default {
         this.restaurant = data.restaurant;
       });
   },
-  methods: {},
+  methods: {
+    onSlideStart() {
+      this.sliding = true;
+    },
+    onSlideEnd() {
+      this.sliding = false;
+    },
+  },
 };
 </script>
 <style scoped>
@@ -101,7 +132,7 @@ export default {
   top: 10px;
 }
 .wrapper {
-  height: 430px;
+  height: 436px;
   width: 900px;
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
@@ -128,9 +159,10 @@ export default {
 }
 
 .right-column h1 {
-  padding-top: 30px;
-  font-size: 34px;
-  color: #474747;
+  padding-top: 20px;
+  font-size: 44px;
+  color: #d8790e;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .right-column h2,
@@ -144,13 +176,5 @@ h4 {
   color: #000000;
   letter-spacing: 0.2em;
   text-align: left;
-}
-
-.left-column img {
-  border-radius: 7px 0 0 7px;
-  float: left;
-  height: 430px;
-  width: 327px;
-  position: relative;
 }
 </style>
