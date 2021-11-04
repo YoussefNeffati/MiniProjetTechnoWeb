@@ -210,8 +210,8 @@ export default {
 }
 
 .tab {
-  width: 50%;
-  height: 50%;
+  width: 75%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
