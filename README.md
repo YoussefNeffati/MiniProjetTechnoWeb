@@ -1,4 +1,8 @@
 # MiniProjetTechnoWeb
+Interface ergonomique avec liste de restaurant en affichant plus d'informations.
+## Auteurs
+CAMARA Mamadou
+NEFFATI Youssef
 
 Dans ce mini projet nous avons pu faire les points suivants:
 ## 1
@@ -51,3 +55,6 @@ Ce component affiche le contenu, lorsqu'on clique sur le bouton "Details" concer
 La cuisine, la ville , l'adresse, La photo, la carte google map avec le restaurant à partir de sa longitude et latitude
 ## Propos
 Contenu de l'option A PROPOS du menu
+# Sources
+
+# Lien vidéo youtube
