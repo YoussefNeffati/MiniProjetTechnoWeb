@@ -69,7 +69,7 @@
             lng: restaurant.address.coord[0],
           }"
           :zoom="10"
-          map-type-id="terrain"
+          map-type-id="roadmap"
           style="width: 450px; height: 260px; margin: 25px 0px 0px 38px"
         >
           <gmap-marker

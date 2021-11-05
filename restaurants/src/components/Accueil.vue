@@ -21,18 +21,16 @@
     </div>
     <h1>Nombre de restaurants : {{ nbRestaurantsTotal }}</h1>
     <form @submit.prevent="ajouterRestaurant()">
-      <label>
-        Nom : <input name="name" type="text" required v-model="name" />
+      <label> Nom : 
+        <input name="name" type="text" required v-model="name" />
       </label>
-      <label>
-        Cuisine :
+      <label> Cuisine :
         <input name="cuisine" type="text" required v-model="cuisine" />
       </label>
-      <label>
-        Ville :
+      <label> Ville :
         <input name="borough" type="text" required v-model="borough" />
       </label>
-      <button>Ajouter</button>
+      <p> <md-button type="submit">Ajouter </md-button> </p>
     </form>
 
     <h2>
@@ -50,7 +48,7 @@
     </h2>
     <p>Nombre de pages total : {{ nbPagesTotal }}</p>
     <p>
-      Nb de restaurants par page :
+      Nombre de restaurants par page :
       <input
         type="range"
         min="5"
@@ -113,7 +111,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Accueil",
   data: () => ({
     restaurants: [],
     name: "",

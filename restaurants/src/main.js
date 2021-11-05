@@ -8,7 +8,7 @@ import * as VueGoogleMaps from "vue2-google-maps" // Import package
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import HelloWorld from './components/HelloWorld.vue'
+import Accueil from './components/Accueil.vue'
 import Restaurant from './components/Restaurant.vue'
 import Propos from './components/Propos.vue'
 import Contact from './components/Contact.vue'
@@ -32,7 +32,7 @@ const router = new VueRouter({
 
   routes: [{
     path: '/',
-    component: HelloWorld
+    component: Accueil
   },
   {
     path: '/restaurant/:id',
