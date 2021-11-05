@@ -88,7 +88,7 @@
         }}</md-table-cell>
         <md-table-cell md-label="Ville">{{ item.borough }}</md-table-cell>
         <md-table-cell md-label="Action">
-          <!--<md-button>Details</md-button>-->
+
           <router-link :to="'/restaurant/' + item._id"
             ><md-button class="md-raised md-primary">Details</md-button>
           </router-link>
@@ -148,8 +148,7 @@ export default {
       fetch(url)
         .then((responseJSON) => {
           responseJSON.json().then((resJS) => {
-            //afficheResponseGET(res);
-            //console.log(resJS)
+            
             this.restaurants = resJS.data;
             this.nbRestaurantsTotal = resJS.count;
             this.nbPagesTotal = Math.round(
@@ -162,7 +161,7 @@ export default {
         });
     },
     async supprimerRestaurant(id) {
-      //this.restaurants.splice(index, 1);
+      
       try {
         await fetch(this.lien + "/" + id, {
           method: "DELETE",
@@ -187,14 +186,10 @@ export default {
       this.borough = "";
       this.getRestaurantsFromServer();
     },
-    getColor(index) {
-      return index % 2 ? "lightBlue" : "pink";
-    },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .md-field {
   max-width: 300px;

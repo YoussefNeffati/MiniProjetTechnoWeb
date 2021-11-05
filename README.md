@@ -155,9 +155,6 @@ async ajouterRestaurant() {
       this.borough = "";
       this.getRestaurantsFromServer();
     },
-    getColor(index) {
-      return index % 2 ? "lightBlue" : "pink";
-    },
   },
 };
 ```
@@ -170,10 +167,9 @@ Afficher les informations détaillées  d'un restaurant:
 * Adresse
 ```html
 <h1>{{ restaurant.name }}</h1>
-        <h2>Cuisine : {{ restaurant.cuisine }}</h2>
-        <h3>Ville : {{ restaurant.borough }}</h3>
-        <h4>
-          Adresse :
+<h2>Cuisine : {{ restaurant.cuisine }}</h2>
+<h3>Ville : {{ restaurant.borough }}</h3>
+<h4>Adresse :
           {{
             restaurant.address.building +
             ", " +
@@ -192,14 +188,14 @@ Une carte Google map avec la localisation du restaurant.
           }"
           :zoom="10"
           map-type-id="roadmap"
-          style="width: 450px; height: 260px; margin: 25px 0px 0px 38px"
-        >
-          <gmap-marker
+          style="width: 450px; height: 260px; margin: 25px 0px 0px 38px">
+  
+  <gmap-marker
             :position="{
               lat: restaurant.address.coord[1],
               lng: restaurant.address.coord[0],
             }"
           >
-          </gmap-marker>
-        </gmap-map>
+  </gmap-marker>
+</gmap-map>
 ```

@@ -48,7 +48,7 @@
       </b-carousel>
 
       <div class="right-column">
-        <!--<h1>Détail d'un restaurant </h1>-->
+
         <h1>{{ restaurant.name }}</h1>
         <h2>Cuisine : {{ restaurant.cuisine }}</h2>
         <h3>Ville : {{ restaurant.borough }}</h3>
@@ -86,7 +86,7 @@
 </template>
 
 <script>
-//import resto from "./assets/r1.png"
+
 export default {
   name: "Restaurant",
   props: {},
@@ -136,7 +136,6 @@ export default {
   width: 900px;
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
-  /* VIA CSS MATIC https://goo.gl/cIbnS */
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
